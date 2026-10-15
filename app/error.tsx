@@ -26,7 +26,7 @@ export default function Error({
           console.error("[portfolio] Retry after route error");
           reset();
         }}
-        className="mt-8 rounded-full bg-accent px-5 py-2.5 text-sm font-medium text-white transition hover:bg-accent-deep"
+        className="mt-8 bg-ink px-5 py-2.5 text-sm font-medium text-on-dark transition hover:bg-ink-soft"
       >
         Try again
       </button>

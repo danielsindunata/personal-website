@@ -32,7 +32,7 @@ export class ErrorBoundary extends Component<Props, State> {
           </p>
           <button
             type="button"
-            className="mt-8 rounded-full bg-accent px-5 py-2.5 text-sm font-medium text-white transition hover:bg-accent-deep"
+            className="mt-8 bg-ink px-5 py-2.5 text-sm font-medium text-on-dark transition hover:bg-ink-soft"
             onClick={() => {
               console.error("[portfolio] User requested recovery reload");
               this.setState({ hasError: false });

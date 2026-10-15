@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" fill="none">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0c1210"/>
+      <stop offset="55%" stop-color="#151c18"/>
+      <stop offset="100%" stop-color="#0a0e0c"/>
+    </linearGradient>
+    <linearGradient id="mist" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#22c55e" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#22c55e" stop-opacity="0.08"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#sky)"/>
+  <ellipse cx="800" cy="200" rx="500" ry="80" fill="#1a2420" opacity="0.4"/>
+  <path d="M0 520 L220 380 L380 460 L560 300 L760 420 L980 280 L1180 400 L1400 320 L1600 450 L1600 900 L0 900 Z" fill="#121916"/>
+  <path d="M0 620 L180 500 L340 560 L520 440 L720 540 L940 400 L1160 520 L1360 460 L1600 560 L1600 900 L0 900 Z" fill="#0e1411"/>
+  <path d="M0 720 L260 620 L480 680 L700 600 L960 690 L1220 610 L1600 700 L1600 900 L0 900 Z" fill="#0a100d"/>
+  <rect width="1600" height="900" fill="url(#mist)"/>
+  <ellipse cx="800" cy="780" rx="700" ry="100" fill="#22c55e" opacity="0.06"/>
+</svg>

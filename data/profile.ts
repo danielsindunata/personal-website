@@ -1,15 +1,50 @@
 export const profile = {
   name: "Daniel Sindunata",
-  title: "Developer & Builder",
+  title: "Full-Stack Developer",
+  headline: "Turning real-world problems into practical digital solutions.",
+  heroSubtitle: "Full-Stack Developer building practical digital solutions.",
+  heroImage: "/assets/hero-developer-workspace.png",
   tagline:
-    "I design and ship thoughtful web experiences — from idea to polished product.",
-  bio: `I'm a developer who cares about clarity, craft, and making things that people actually enjoy using. I work across the stack, with a focus on clean interfaces and reliable foundations.
+    "A developer with a hospitality and operations background, building business-focused software that actually gets used.",
+  bio: `I spent years in hospitality and operations before moving into software — so I build with the people who run the workday in mind, not just the people who write the tickets.
 
-When I'm not coding, I'm exploring new tools, sketching product ideas, or refining side projects.`,
+I focus on full-stack products that solve concrete business problems: event platforms, company portals, and tools that replace messy spreadsheets with something teams can trust.`,
   email: "daniel.sindunata@gmail.com",
-  location: "Your City",
+  location: "Semarang, Indonesia",
+  availability: "Open to opportunities",
+  cvUrl: "/cv.pdf",
+  workspaceImage: "/about/workspace.svg",
+  contactImage: "/contact/bg.svg",
   social: {
     github: "https://github.com/danielsindunata",
     linkedin: "https://linkedin.com/in/yourusername",
   },
+  stats: [
+    { label: "Full-Stack", detail: "End-to-end apps" },
+    { label: "Data", detail: "Insights & reporting" },
+    { label: "Operations", detail: "Process-first design" },
+    { label: "4+ Projects", detail: "Shipped & live" },
+  ],
+  timeline: [
+    {
+      year: "2018",
+      title: "Chef / Hospitality",
+      description: "Built operational discipline in high-pressure kitchens.",
+    },
+    {
+      year: "2022",
+      title: "Data Analyst Bootcamp",
+      description: "SQL, reporting, and turning messy data into decisions.",
+    },
+    {
+      year: "2023",
+      title: "Freelance Developer",
+      description: "Shipping portals and tools for real business workflows.",
+    },
+    {
+      year: "Now",
+      title: "Full-Stack Developer",
+      description: "Building practical digital products end to end.",
+    },
+  ],
 } as const;
