@@ -21,13 +21,24 @@ Open [http://localhost:3000](http://localhost:3000).
 
 Replace the placeholder SVGs with your own images (PNG/JPG/WebP) and update the `image` paths in `data/projects.ts`.
 
+## Push to GitHub
+
+Remote is already set to `https://github.com/danielsindunata/personal-website.git`.
+
+If local commits are ahead of GitHub, run:
+
+```bash
+git push -u origin main
+```
+
 ## Deploy on Vercel
 
-1. Push this repo to GitHub (already set up if you followed the project setup).
-2. Go to [vercel.com/new](https://vercel.com/new) and **Import** the GitHub repository.
-3. Keep the **Next.js** preset (auto-detected). No env vars needed.
-4. Click **Deploy**. You get a `*.vercel.app` URL.
-5. Optional: add a custom domain under **Project → Settings → Domains**.
+1. Push `main` to GitHub (command above).
+2. Sign in at [vercel.com](https://vercel.com) with GitHub.
+3. Open [vercel.com/new](https://vercel.com/new) → **Import** `danielsindunata/personal-website`.
+4. Keep the **Next.js** preset (auto-detected). No env vars needed.
+5. Click **Deploy** — you get a `*.vercel.app` URL.
+6. Optional: add a custom domain under **Project → Settings → Domains**.
 
 Every push to `main` triggers a new production deploy.
 
