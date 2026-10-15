@@ -1,21 +1,12 @@
-import { About } from "@/components/About";
-import { Contact } from "@/components/Contact";
-import { Footer } from "@/components/Footer";
-import { Header } from "@/components/Header";
-import { Hero } from "@/components/Hero";
-import { Projects } from "@/components/Projects";
-
 export default function Home() {
   return (
-    <>
-      <Header />
-      <main className="flex-1">
-        <Hero />
-        <About />
-        <Projects />
-        <Contact />
-      </main>
-      <Footer />
-    </>
+    <main className="flex flex-1 flex-col items-center justify-center px-6 text-center">
+      <h1 className="font-display text-4xl tracking-tight text-ink sm:text-5xl">
+        Daniel Sindunata
+      </h1>
+      <p className="mt-4 text-lg text-muted">
+        Portfolio skeleton — Vercel deploy OK
+      </p>
+    </main>
   );
 }
