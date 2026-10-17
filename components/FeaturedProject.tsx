@@ -80,24 +80,24 @@ export function FeaturedProject() {
                 <span className="h-2 w-2 rounded-full bg-border" />
                 <span className="h-2 w-2 rounded-full bg-border" />
               </div>
-              <div className="relative h-[calc(100%-1.75rem)]">
+              <div className="relative h-[calc(100%-1.75rem)] bg-[#121514]">
                 <Image
                   src={project.heroImage ?? project.image}
                   alt={`${project.title} desktop preview`}
                   fill
-                  className="object-cover object-top"
+                  className="object-contain object-top"
                   sizes="(max-width: 1024px) 90vw, 45vw"
                 />
               </div>
             </div>
             <div className="absolute bottom-0 right-4 w-[30%] overflow-hidden rounded-[1.1rem] border border-border bg-ink shadow-lg">
               <div className="mx-auto mt-1.5 h-1 w-8 rounded-full bg-white/25" />
-              <div className="relative mt-1.5 aspect-[9/16]">
+              <div className="relative mt-1.5 aspect-[9/16] bg-[#121514]">
                 <Image
-                  src={project.image}
+                  src={project.mobileImage ?? project.image}
                   alt={`${project.title} mobile preview`}
                   fill
-                  className="object-cover object-top"
+                  className="object-contain object-top"
                   sizes="140px"
                 />
               </div>

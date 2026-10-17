@@ -3,7 +3,7 @@ export const profile = {
   title: "Full-Stack Developer",
   headline: "Turning real-world problems into practical digital solutions.",
   heroSubtitle: "Full-Stack Developer building practical digital solutions.",
-  heroImage: "/assets/hero-developer-workspace.png",
+  heroImage: "/assets/hero-developer-workspace-4k.png",
   tagline:
     "A developer with a hospitality and operations background, building business-focused software that actually gets used.",
   bio: `I spent years in hospitality and operations before moving into software — so I build with the people who run the workday in mind, not just the people who write the tickets.

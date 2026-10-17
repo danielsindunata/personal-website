@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900" role="img" aria-label="Placeholder for Collaborative Infinite Whiteboard screenshot">
+  <defs>
+    <linearGradient id="wb-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#141816"/>
+      <stop offset="100%" stop-color="#0a0c0b"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="900" fill="url(#wb-bg)"/>
+  <rect x="36" y="36" width="1128" height="828" fill="none" stroke="#2a2f2c" stroke-width="1"/>
+  <line x1="36" y1="100" x2="1164" y2="100" stroke="#2a2f2c" stroke-width="1"/>
+  <text x="64" y="78" fill="#5eead4" font-family="system-ui,sans-serif" font-size="14" font-weight="600" letter-spacing="0.18em">SELECTED WORK</text>
+  <text x="64" y="200" fill="#fafafa" font-family="Georgia,serif" font-size="36">Collaborative Infinite Whiteboard</text>
+  <text x="64" y="260" fill="#a1a1aa" font-family="system-ui,sans-serif" font-size="20">Screenshot coming soon</text>
+  <text x="64" y="304" fill="#71717a" font-family="ui-monospace,monospace" font-size="15">Replace with: /assets/project-whiteboard.png</text>
+  <rect x="64" y="370" width="240" height="2" fill="#5eead4" opacity="0.5"/>
+</svg>
