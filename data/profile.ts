@@ -23,7 +23,7 @@ I focus on full-stack products that solve concrete business problems: event plat
     { label: "Full-Stack", detail: "End-to-end apps" },
     { label: "Data", detail: "Insights & reporting" },
     { label: "Operations", detail: "Process-first design" },
-    { label: "4+ Projects", detail: "Shipped & live" },
+    { label: "3 Projects", detail: "Shipped & live" }
   ],
   timeline: [
     {

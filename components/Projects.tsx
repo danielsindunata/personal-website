@@ -28,7 +28,7 @@ export function Projects() {
           <ProjectCard project={featured} variant="featured" />
         </div>
 
-        <ul className="mt-8 grid gap-6 sm:grid-cols-2 lg:mt-10 lg:grid-cols-3 lg:gap-8">
+        <ul className="mt-8 grid gap-6 sm:grid-cols-2 lg:mt-10 lg:grid-cols-2 lg:gap-8">
           {others.map((project) => (
             <li key={project.id}>
               <ProjectCard project={project} variant="standard" />

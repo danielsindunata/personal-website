@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { getProjectHref, type Project } from "@/data/projects";
 
 type ProjectCardProps = {
@@ -82,21 +83,17 @@ export function ProjectCard({
             </li>
           ))}
         </ul>
-        {href ? (
-          <a
-            href={href}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={`inline-flex items-center gap-2 text-sm font-semibold text-on-dark transition hover:text-accent-teal ${
-              isFeatured ? "mt-8" : "mt-auto pt-5"
-            }`}
-          >
-            View project
-            <span aria-hidden className="transition group-hover:translate-x-0.5">
-              →
-            </span>
-          </a>
-        ) : null}
+        <Link
+          href={href}
+          className={`inline-flex items-center gap-2 text-sm font-semibold text-on-dark transition hover:text-accent-teal ${
+            isFeatured ? "mt-8" : "mt-auto pt-5"
+          }`}
+        >
+          View project
+          <span aria-hidden className="transition group-hover:translate-x-0.5">
+            →
+          </span>
+        </Link>
       </div>
     </article>
   );

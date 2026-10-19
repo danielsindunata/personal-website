@@ -1,33 +1,44 @@
 "use client";
 
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { profile } from "@/data/profile";
 
 const links = [
-  { href: "#top", label: "Home" },
-  { href: "#projects", label: "Projects" },
-  { href: "#about", label: "About" },
-  { href: "#contact", label: "Contact" },
+  { href: "/", label: "Home" },
+  { href: "/#projects", label: "Projects" },
+  { href: "/#about", label: "About" },
+  { href: "/#contact", label: "Contact" },
 ];
 
 export function Header() {
+  const pathname = usePathname();
+  const isHome = pathname === "/";
   const [open, setOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
+  const [homeScrolled, setHomeScrolled] = useState(false);
+  const scrolled = !isHome || homeScrolled;
 
   useEffect(() => {
+    if (!isHome) {
+      return;
+    }
+
     const hero = document.getElementById("top");
-    if (!hero) return;
+    if (!hero) {
+      return;
+    }
 
     const observer = new IntersectionObserver(
       ([entry]) => {
-        setScrolled(!entry.isIntersecting);
+        setHomeScrolled(!entry.isIntersecting);
       },
       { rootMargin: "-64px 0px 0px 0px", threshold: 0 },
     );
 
     observer.observe(hero);
     return () => observer.disconnect();
-  }, []);
+  }, [isHome]);
 
   return (
     <header
@@ -38,22 +49,22 @@ export function Header() {
       }`}
     >
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6 md:h-20">
-        <a
-          href="#top"
+        <Link
+          href="/"
           className="text-sm font-semibold tracking-tight text-on-dark transition hover:opacity-80"
         >
           {profile.name}
-        </a>
+        </Link>
 
         <nav className="hidden items-center gap-8 text-sm text-on-dark-muted md:flex">
           {links.map((link) => (
-            <a
+            <Link
               key={link.href}
               href={link.href}
               className="transition hover:text-on-dark"
             >
               {link.label}
-            </a>
+            </Link>
           ))}
           <a
             href={profile.cvUrl}
@@ -90,14 +101,14 @@ export function Header() {
         <div className="border-t border-white/10 px-6 py-6 md:hidden">
           <nav className="flex flex-col gap-4 text-sm text-on-dark-muted">
             {links.map((link) => (
-              <a
+              <Link
                 key={link.href}
                 href={link.href}
                 className="py-1 transition hover:text-on-dark"
                 onClick={() => setOpen(false)}
               >
                 {link.label}
-              </a>
+              </Link>
             ))}
             <a
               href={profile.cvUrl}

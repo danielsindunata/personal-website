@@ -1,5 +1,6 @@
 import Image from "next/image";
-import { featuredProject } from "@/data/projects";
+import Link from "next/link";
+import { featuredProject, getProjectHref } from "@/data/projects";
 
 export function FeaturedProject() {
   const project = featuredProject;
@@ -49,12 +50,18 @@ export function FeaturedProject() {
           </ul>
 
           <div className="mt-8 flex flex-wrap gap-3">
+            <Link
+              href={getProjectHref(project)}
+              className="bg-ink px-5 py-3 text-sm font-semibold text-on-dark transition hover:bg-ink-soft"
+            >
+              View project →
+            </Link>
             {project.demoUrl ? (
               <a
                 href={project.demoUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-ink px-5 py-3 text-sm font-semibold text-on-dark transition hover:bg-ink-soft"
+                className="border border-border bg-background px-5 py-3 text-sm font-semibold text-ink transition hover:border-ink"
               >
                 View live site
               </a>
