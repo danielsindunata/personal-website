@@ -66,7 +66,7 @@ export const projects: Project[] = [
           "/assets/event-platform-checkin.webp",
           "/assets/project-event-platform.svg",
         ),
-        alt: "Mobile QR check-in",
+        alt: "QR code scanner check-in interface",
       },
       {
         src: assetOrFallback(

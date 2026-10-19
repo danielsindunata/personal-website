@@ -1,34 +1,39 @@
+export type Skill = {
+  name: string;
+  iconSrc?: string;
+};
+
 export type SkillGroup = {
   title: string;
-  skills: { name: string; color: string }[];
+  skills: Skill[];
 };
 
 export const skillGroups: SkillGroup[] = [
   {
     title: "Frontend",
     skills: [
-      { name: "Next.js", color: "#000000" },
-      { name: "React", color: "#61DAFB" },
-      { name: "TypeScript", color: "#3178C6" },
-      { name: "Tailwind CSS", color: "#06B6D4" },
+      { name: "Next.js", iconSrc: "/icons/nextdotjs.svg" },
+      { name: "React", iconSrc: "/icons/react.svg" },
+      { name: "TypeScript", iconSrc: "/icons/typescript.svg" },
+      { name: "Tailwind CSS", iconSrc: "/icons/tailwindcss.svg" },
     ],
   },
   {
     title: "Backend",
     skills: [
-      { name: "Node.js", color: "#339933" },
-      { name: "Prisma", color: "#2D3748" },
-      { name: "MariaDB", color: "#C32129" },
-      { name: "SQL", color: "#336791" },
+      { name: "Node.js", iconSrc: "/icons/nodedotjs.svg" },
+      { name: "Prisma", iconSrc: "/icons/prisma.svg" },
+      { name: "MariaDB", iconSrc: "/icons/mariadb.svg" },
+      { name: "SQL" },
     ],
   },
   {
     title: "Tools & Others",
     skills: [
-      { name: "Git", color: "#F05032" },
-      { name: "Docker", color: "#2496ED" },
-      { name: "Nginx", color: "#009639" },
-      { name: "Power BI", color: "#F2C811" },
+      { name: "Git", iconSrc: "/icons/git.svg" },
+      { name: "Docker", iconSrc: "/icons/docker.svg" },
+      { name: "Nginx", iconSrc: "/icons/nginx.svg" },
+      { name: "Power BI", iconSrc: "/icons/powerbi.svg" },
     ],
   },
 ];

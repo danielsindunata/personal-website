@@ -9,24 +9,26 @@ import {
   getProjectStack,
   type Project,
 } from "@/data/projects";
-import { skillGroups } from "@/data/skills";
-
-const skillColorByName = new Map(
-  skillGroups.flatMap((group) =>
-    group.skills.map((skill) => [skill.name.toLowerCase(), skill.color] as const),
-  ),
-);
-
-const stackColorAliases: Record<string, string> = {
+const stackColorByName: Record<string, string> = {
+  "next.js": "#000000",
+  react: "#61DAFB",
+  typescript: "#3178C6",
   tailwind: "#06B6D4",
   "tailwind css": "#06B6D4",
+  "node.js": "#5FA04E",
+  prisma: "#2D3748",
+  mariadb: "#003545",
+  sql: "#336791",
+  git: "#F05032",
+  docker: "#2496ED",
+  nginx: "#009639",
+  "power bi": "#F2C811",
   canvas: "#F59E0B",
   websockets: "#8B5CF6",
 };
 
 function stackColor(name: string): string {
-  const key = name.toLowerCase();
-  return skillColorByName.get(key) ?? stackColorAliases[key] ?? "#52525b";
+  return stackColorByName[name.toLowerCase()] ?? "#52525b";
 }
 
 type ProjectDetailProps = {
