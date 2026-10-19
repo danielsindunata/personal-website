@@ -16,11 +16,11 @@ export function Projects() {
             Selected work
           </p>
           <h2 className="mt-3 font-display text-3xl tracking-tight text-on-dark sm:text-4xl lg:text-[2.75rem] lg:leading-tight">
-            Projects built to solve real problems.
+            Practical software for real business workflows.
           </h2>
           <p className="mt-4 max-w-xl text-base leading-relaxed text-on-dark-muted">
-            A selection of business applications, internal tools, and data
-            systems I&apos;ve built or developed.
+            Event operations, collaborative tools, and internal portals — built
+            to replace messy spreadsheets with systems teams can trust.
           </p>
         </div>
 
@@ -28,7 +28,7 @@ export function Projects() {
           <ProjectCard project={featured} variant="featured" />
         </div>
 
-        <ul className="mt-8 grid gap-6 sm:grid-cols-2 lg:mt-10 lg:grid-cols-2 lg:gap-8">
+        <ul className="mt-8 grid gap-6 sm:grid-cols-2 lg:mt-10 lg:gap-8">
           {others.map((project) => (
             <li key={project.id}>
               <ProjectCard project={project} variant="standard" />

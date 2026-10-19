@@ -51,7 +51,7 @@ export function Header() {
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6 md:h-20">
         <Link
           href="/"
-          className="text-sm font-semibold tracking-tight text-on-dark transition hover:opacity-80"
+          className="text-sm font-semibold tracking-tight text-on-dark transition hover:opacity-80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-teal"
         >
           {profile.name}
         </Link>
@@ -61,14 +61,14 @@ export function Header() {
             <Link
               key={link.href}
               href={link.href}
-              className="transition hover:text-on-dark"
+              className="transition hover:text-on-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-teal"
             >
               {link.label}
             </Link>
           ))}
           <a
             href={profile.cvUrl}
-            className="inline-flex items-center gap-2 border border-white/25 px-4 py-2 text-sm font-medium text-on-dark transition hover:border-white/50 hover:bg-white/5"
+            className="inline-flex items-center gap-2 border border-white/25 px-4 py-2 text-sm font-medium text-on-dark transition hover:border-white/50 hover:bg-white/5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-teal"
           >
             Download CV
             <span aria-hidden>→</span>

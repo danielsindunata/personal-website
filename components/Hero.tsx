@@ -41,13 +41,13 @@ export function Hero() {
           <div className="animate-fade-up animate-delay-2 mt-9 flex flex-wrap gap-3">
             <a
               href="#projects"
-              className="bg-white px-5 py-3 text-sm font-semibold text-ink transition hover:bg-white/90"
+              className="bg-white px-5 py-3 text-sm font-semibold text-ink transition hover:bg-white/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-teal"
             >
               Explore My Work
             </a>
             <a
               href="#contact"
-              className="border border-white/35 px-5 py-3 text-sm font-semibold text-white transition hover:border-accent-teal hover:text-accent-teal"
+              className="border border-white/35 px-5 py-3 text-sm font-semibold text-white transition hover:border-accent-teal hover:text-accent-teal focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-teal"
             >
               Get in Touch
             </a>

@@ -28,13 +28,13 @@ export function Contact() {
         <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
           <a
             href={`mailto:${profile.email}`}
-            className="bg-on-dark px-5 py-3 text-sm font-semibold text-ink transition hover:bg-white"
+            className="bg-on-dark px-5 py-3 text-sm font-semibold text-ink transition hover:bg-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-teal"
           >
             Email me
           </a>
           <a
             href={profile.cvUrl}
-            className="border border-white/30 px-5 py-3 text-sm font-semibold text-on-dark transition hover:border-white/60 hover:bg-white/5"
+            className="border border-white/30 px-5 py-3 text-sm font-semibold text-on-dark transition hover:border-white/60 hover:bg-white/5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-teal"
           >
             Download CV
           </a>

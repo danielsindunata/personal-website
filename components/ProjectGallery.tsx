@@ -69,8 +69,8 @@ export function ProjectGallery({
               fill
               className={
                 objectFit === "cover"
-                  ? "object-cover transition duration-300 group-hover:scale-[1.02]"
-                  : "object-contain p-2 transition duration-300 group-hover:scale-[1.02]"
+                  ? "motion-safe-scale object-cover transition duration-300 group-hover:scale-[1.02]"
+                  : "motion-safe-scale object-contain p-2 transition duration-300 group-hover:scale-[1.02]"
               }
               sizes="(max-width: 768px) 78vw, 33vw"
             />

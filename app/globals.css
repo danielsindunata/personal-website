@@ -146,4 +146,14 @@ body {
   .animate-pulse-status {
     animation: none;
   }
+
+  .motion-safe-scale,
+  .group:hover .motion-safe-scale {
+    transform: none !important;
+  }
+
+  .motion-safe-translate,
+  .group:hover .motion-safe-translate {
+    transform: none !important;
+  }
 }
