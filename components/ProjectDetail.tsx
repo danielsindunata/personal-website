@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ProjectCard } from "@/components/ProjectCard";
+import { ProjectGallery } from "@/components/ProjectGallery";
 import {
   getOtherProjects,
   getProjectGallery,
@@ -206,26 +207,7 @@ export function ProjectDetail({ project }: ProjectDetailProps) {
             <h2 className="text-xs font-semibold uppercase tracking-[0.2em] text-muted">
               Screenshots
             </h2>
-            <div className="-mx-6 mt-6 flex gap-4 overflow-x-auto px-6 pb-2 md:mx-0 md:grid md:grid-cols-3 md:overflow-visible md:px-0">
-              {gallery.map((item, index) => (
-                <div
-                  key={`${item.src}-${index}`}
-                  className="relative aspect-[16/10] w-[78vw] shrink-0 overflow-hidden border border-border bg-[#121514] md:w-auto"
-                >
-                  <Image
-                    src={item.src}
-                    alt={item.alt}
-                    fill
-                    className={
-                      objectFit === "cover"
-                        ? "object-cover"
-                        : "object-contain p-2"
-                    }
-                    sizes="(max-width: 768px) 78vw, 33vw"
-                  />
-                </div>
-              ))}
-            </div>
+            <ProjectGallery items={gallery} objectFit={objectFit} />
           </section>
         ) : null}
 
