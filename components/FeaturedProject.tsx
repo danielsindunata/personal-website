@@ -4,6 +4,8 @@ import { featuredProject, getProjectHref } from "@/data/projects";
 
 export function FeaturedProject() {
   const project = featuredProject;
+  const hasMobile = Boolean(project.mobileImage);
+  const objectFit = project.objectFit ?? "contain";
 
   return (
     <section id="featured" className="scroll-mt-20 bg-surface py-20 md:py-28">
@@ -80,36 +82,63 @@ export function FeaturedProject() {
         </div>
 
         <div className="relative mx-auto w-full max-w-lg lg:max-w-none">
-          <div className="relative aspect-[5/4]">
-            <div className="absolute inset-x-0 top-0 bottom-[12%] overflow-hidden rounded-lg border border-border bg-background shadow-[0_20px_50px_rgba(0,0,0,0.12)]">
+          {hasMobile ? (
+            <div className="relative aspect-[5/4]">
+              <div className="absolute inset-x-0 top-0 bottom-[12%] overflow-hidden rounded-lg border border-border bg-background shadow-[0_20px_50px_rgba(0,0,0,0.12)]">
+                <div className="flex h-7 items-center gap-1.5 border-b border-border bg-surface px-3">
+                  <span className="h-2 w-2 rounded-full bg-border" />
+                  <span className="h-2 w-2 rounded-full bg-border" />
+                  <span className="h-2 w-2 rounded-full bg-border" />
+                </div>
+                <div className="relative h-[calc(100%-1.75rem)] bg-[#121514]">
+                  <Image
+                    src={project.heroImage ?? project.image}
+                    alt={`${project.title} desktop preview`}
+                    fill
+                    className={
+                      objectFit === "cover"
+                        ? "object-cover object-top"
+                        : "object-contain object-top"
+                    }
+                    sizes="(max-width: 1024px) 90vw, 45vw"
+                  />
+                </div>
+              </div>
+              <div className="absolute bottom-0 right-4 w-[30%] overflow-hidden rounded-[1.1rem] border border-border bg-ink shadow-lg">
+                <div className="mx-auto mt-1.5 h-1 w-8 rounded-full bg-white/25" />
+                <div className="relative mt-1.5 aspect-[9/16] bg-[#121514]">
+                  <Image
+                    src={project.mobileImage!}
+                    alt={`${project.title} mobile preview`}
+                    fill
+                    className="object-contain object-top"
+                    sizes="140px"
+                  />
+                </div>
+              </div>
+            </div>
+          ) : (
+            <div className="overflow-hidden rounded-lg border border-border bg-background shadow-[0_20px_50px_rgba(0,0,0,0.12)]">
               <div className="flex h-7 items-center gap-1.5 border-b border-border bg-surface px-3">
                 <span className="h-2 w-2 rounded-full bg-border" />
                 <span className="h-2 w-2 rounded-full bg-border" />
                 <span className="h-2 w-2 rounded-full bg-border" />
               </div>
-              <div className="relative h-[calc(100%-1.75rem)] bg-[#121514]">
+              <div className="relative aspect-[16/10] bg-[#121514]">
                 <Image
                   src={project.heroImage ?? project.image}
-                  alt={`${project.title} desktop preview`}
+                  alt={`${project.title} preview`}
                   fill
-                  className="object-contain object-top"
+                  className={
+                    objectFit === "cover"
+                      ? "object-cover"
+                      : "object-contain p-2 sm:p-3"
+                  }
                   sizes="(max-width: 1024px) 90vw, 45vw"
                 />
               </div>
             </div>
-            <div className="absolute bottom-0 right-4 w-[30%] overflow-hidden rounded-[1.1rem] border border-border bg-ink shadow-lg">
-              <div className="mx-auto mt-1.5 h-1 w-8 rounded-full bg-white/25" />
-              <div className="relative mt-1.5 aspect-[9/16] bg-[#121514]">
-                <Image
-                  src={project.mobileImage ?? project.image}
-                  alt={`${project.title} mobile preview`}
-                  fill
-                  className="object-contain object-top"
-                  sizes="140px"
-                />
-              </div>
-            </div>
-          </div>
+          )}
         </div>
       </div>
     </section>

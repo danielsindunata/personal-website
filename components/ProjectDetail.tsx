@@ -39,6 +39,8 @@ export function ProjectDetail({ project }: ProjectDetailProps) {
   const others = getOtherProjects(project.id);
   const hasMobile = Boolean(project.mobileImage);
   const objectFit = project.objectFit ?? "contain";
+  const hasFeatures = Boolean(project.features && project.features.length > 0);
+  const exploreHref = hasFeatures ? "#key-features" : "#screenshots";
 
   return (
     <article className="bg-background pt-24 md:pt-28">
@@ -133,30 +135,34 @@ export function ProjectDetail({ project }: ProjectDetailProps) {
           ))}
         </ul>
 
-        {(project.demoUrl || project.repoUrl) && (
-          <div className="mt-6 flex flex-wrap gap-3">
-            {project.demoUrl ? (
-              <a
-                href={project.demoUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-ink px-5 py-3 text-sm font-semibold text-on-dark transition hover:bg-ink-soft"
-              >
-                View live site
-              </a>
-            ) : null}
-            {project.repoUrl ? (
-              <a
-                href={project.repoUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="border border-border bg-background px-5 py-3 text-sm font-semibold text-ink transition hover:border-ink"
-              >
-                View on GitHub
-              </a>
-            ) : null}
-          </div>
-        )}
+        <div className="mt-6 flex flex-wrap gap-3">
+          <a
+            href={exploreHref}
+            className="bg-ink px-5 py-3 text-sm font-semibold text-on-dark transition hover:bg-ink-soft"
+          >
+            Explore Features
+          </a>
+          {project.demoUrl ? (
+            <a
+              href={project.demoUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="border border-border bg-background px-5 py-3 text-sm font-semibold text-ink transition hover:border-ink"
+            >
+              View live site
+            </a>
+          ) : null}
+          {project.repoUrl ? (
+            <a
+              href={project.repoUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="border border-border bg-background px-5 py-3 text-sm font-semibold text-ink transition hover:border-ink"
+            >
+              View on GitHub
+            </a>
+          ) : null}
+        </div>
 
         <div className="mt-16 grid gap-12 border-t border-border pt-12 lg:grid-cols-2 lg:gap-16">
           <section>
@@ -170,13 +176,13 @@ export function ProjectDetail({ project }: ProjectDetailProps) {
             </div>
           </section>
 
-          {project.features && project.features.length > 0 ? (
-            <section>
+          {hasFeatures ? (
+            <section id="key-features" className="scroll-mt-28">
               <h2 className="text-xs font-semibold uppercase tracking-[0.2em] text-muted">
                 Key Features
               </h2>
               <ul className="mt-5 space-y-3">
-                {project.features.map((feature) => (
+                {project.features!.map((feature) => (
                   <li
                     key={feature}
                     className="flex items-start gap-3 text-sm text-foreground sm:text-base"
@@ -196,19 +202,19 @@ export function ProjectDetail({ project }: ProjectDetailProps) {
         </div>
 
         {gallery.length > 0 ? (
-          <section className="mt-16">
+          <section id="screenshots" className="mt-16 scroll-mt-28">
             <h2 className="text-xs font-semibold uppercase tracking-[0.2em] text-muted">
               Screenshots
             </h2>
             <div className="-mx-6 mt-6 flex gap-4 overflow-x-auto px-6 pb-2 md:mx-0 md:grid md:grid-cols-3 md:overflow-visible md:px-0">
-              {gallery.map((src, index) => (
+              {gallery.map((item, index) => (
                 <div
-                  key={`${src}-${index}`}
+                  key={`${item.src}-${index}`}
                   className="relative aspect-[16/10] w-[78vw] shrink-0 overflow-hidden border border-border bg-[#121514] md:w-auto"
                 >
                   <Image
-                    src={src}
-                    alt={`${project.title} screenshot ${index + 1}`}
+                    src={item.src}
+                    alt={item.alt}
                     fill
                     className={
                       objectFit === "cover"

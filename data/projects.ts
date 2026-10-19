@@ -1,6 +1,11 @@
 import { existsSync } from "node:fs";
 import path from "node:path";
 
+export type ProjectGalleryItem = {
+  src: string;
+  alt: string;
+};
+
 export type Project = {
   id: string;
   title: string;
@@ -12,7 +17,7 @@ export type Project = {
   image: string;
   heroImage?: string;
   mobileImage?: string;
-  gallery?: string[];
+  gallery?: Array<string | ProjectGalleryItem>;
   features?: string[];
   featured?: boolean;
   demoUrl?: string;
@@ -30,13 +35,13 @@ export const projects: Project[] = [
     id: "corporate-event-platform",
     title: "Corporate Event Management Platform",
     description:
-      "Registration, QR check-in, and live ops for large corporate year-end events.",
+      "Guest registration, QR check-in, admin tools, and stage displays for a large corporate year-end event.",
     longDescription:
-      "A full event platform built for corporate year-end gatherings — guest registration, QR check-in, and live ops views so hosts can run the floor without spreadsheets.",
+      "A full-stack event platform for guest registration, QR check-in, administration, and on-site displays — built and tested with about 2,000 users ahead of a scheduled corporate year-end event.",
     overview: [
-      "Corporate year-end events involve hundreds of guests, last-minute list changes, and staff who need a clear picture of who has arrived. Spreadsheets and paper badges break down under that pressure.",
-      "This platform covers the full event lifecycle: invite and registration, QR-based check-in on mobile, and live ops views so hosts can run the floor without chasing updates across tools.",
-      "Built as a production Next.js app with Prisma and MariaDB, it supports role-based access for organizers, door staff, and display screens on site.",
+      "This platform supports a large corporate year-end gathering with guest registration, QR-based check-in, event administration, and stage/display screens for the floor.",
+      "It has been developed and tested with about 2,000 users. The scheduled event has not yet taken place, so this case study reflects the product as built and validated in testing — not a post-event report.",
+      "Built with Next.js, Prisma, and MariaDB, with role-based access for organizers, door staff, and display operators.",
     ],
     tags: ["Next.js", "Prisma", "MariaDB"],
     stack: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Prisma", "MariaDB"],
@@ -48,39 +53,37 @@ export const projects: Project[] = [
       "/assets/event-platform.webp",
       "/assets/project-event-platform.svg",
     ),
-    mobileImage: assetOrFallback(
-      "/assets/event-platform-checkin.webp",
-      assetOrFallback(
-        "/assets/event-platform.webp",
-        "/assets/project-event-platform.svg",
-      ),
-    ),
     gallery: [
-      assetOrFallback(
-        "/assets/event-platform.webp",
-        "/assets/project-event-platform.svg",
-      ),
-      assetOrFallback(
-        "/assets/event-platform-checkin.webp",
-        "/assets/project-event-platform.svg",
-      ),
-      assetOrFallback(
-        "/assets/event-platform-admin.webp",
-        "/assets/project-event-platform.svg",
-      ),
-      assetOrFallback(
-        "/assets/event-platform-display.webp",
-        "/assets/project-event-platform.svg",
-      ),
+      {
+        src: assetOrFallback(
+          "/assets/event-platform-admin.webp",
+          "/assets/project-event-platform.svg",
+        ),
+        alt: "Event administration dashboard",
+      },
+      {
+        src: assetOrFallback(
+          "/assets/event-platform-checkin.webp",
+          "/assets/project-event-platform.svg",
+        ),
+        alt: "Mobile QR check-in",
+      },
+      {
+        src: assetOrFallback(
+          "/assets/event-platform-display.webp",
+          "/assets/project-event-platform.svg",
+        ),
+        alt: "Stage and floor display screen",
+      },
     ],
     features: [
       "Guest registration and invite flows",
       "QR-based check-in on mobile",
-      "Live attendance and ops dashboard",
-      "Role-based access for event staff",
+      "Event administration and attendance views",
+      "Stage and floor display management",
+      "Interactive on-site event features for staff and guests",
     ],
     featured: true,
-    repoUrl: "https://github.com/danielsindunata/corporate-event-platform",
     objectFit: "contain",
   },
   {
@@ -197,16 +200,34 @@ export function getProjectOverview(project: Project): string[] {
   return [project.description];
 }
 
-export function getProjectGallery(project: Project): string[] {
+export function normalizeGalleryItem(
+  item: string | ProjectGalleryItem,
+  projectTitle: string,
+  index: number,
+): ProjectGalleryItem {
+  if (typeof item === "string") {
+    return {
+      src: item,
+      alt: `${projectTitle} screenshot ${index + 1}`,
+    };
+  }
+  return item;
+}
+
+export function getProjectGallery(project: Project): ProjectGalleryItem[] {
   if (project.gallery && project.gallery.length > 0) {
-    return project.gallery;
+    return project.gallery.map((item, index) =>
+      normalizeGalleryItem(item, project.title, index),
+    );
   }
   const shots = [
     project.heroImage ?? project.image,
     project.mobileImage,
     project.image,
   ].filter((src): src is string => Boolean(src));
-  return [...new Set(shots)];
+  return [...new Set(shots)].map((src, index) =>
+    normalizeGalleryItem(src, project.title, index),
+  );
 }
 
 export function getProjectStack(project: Project): string[] {
