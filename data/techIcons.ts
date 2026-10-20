@@ -18,6 +18,12 @@ const techIconByName: Record<string, TechIcon> = {
   docker: { src: "/icons/docker.svg" },
   nginx: { src: "/icons/nginx.svg" },
   "power bi": { src: "/icons/powerbi.svg" },
+  python: { src: "/icons/python.svg" },
+  postgresql: { src: "/icons/postgresql.svg" },
+  "looker studio": { src: "/icons/looker.svg" },
+  looker: { src: "/icons/looker.svg" },
+  excel: { src: "/icons/microsoftexcel.svg" },
+  "microsoft excel": { src: "/icons/microsoftexcel.svg" },
   canvas: { fallback: "canvas" },
   websockets: { fallback: "websocket" },
 };

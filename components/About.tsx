@@ -61,30 +61,68 @@ export function About() {
             </a>
           </div>
 
-          {/* Timeline */}
           <aside className="min-w-0">
             <h3 className="text-sm font-semibold uppercase tracking-[0.16em] text-muted">
-              Background
+              Experience
             </h3>
             <ol className="relative mt-6 space-y-8 border-l border-border pl-6">
-              {profile.timeline.map((item) => (
-                <li key={`${item.year}-${item.title}`} className="relative">
+              {profile.experience.map((item) => (
+                <li key={`${item.dates}-${item.role}`} className="relative">
                   <span
                     className="absolute -left-[1.6875rem] top-1.5 h-2.5 w-2.5 rounded-full border-2 border-ink bg-surface"
                     aria-hidden
                   />
                   <p className="text-xs font-semibold uppercase tracking-wider text-muted">
-                    {item.year}
+                    {item.dates}
                   </p>
                   <p className="mt-1 text-sm font-semibold text-ink">
-                    {item.title}
+                    {item.role}
                   </p>
+                  <p className="mt-0.5 text-sm text-ink/80">{item.company}</p>
                   <p className="mt-1 text-sm leading-snug text-muted">
                     {item.description}
                   </p>
                 </li>
               ))}
             </ol>
+
+            <h3 className="mt-12 text-sm font-semibold uppercase tracking-[0.16em] text-muted">
+              Education
+            </h3>
+            <ol className="relative mt-6 space-y-8 border-l border-border pl-6">
+              {profile.education.map((item) => (
+                <li key={`${item.dates}-${item.program}`} className="relative">
+                  <span
+                    className="absolute -left-[1.6875rem] top-1.5 h-2.5 w-2.5 rounded-full border-2 border-ink bg-surface"
+                    aria-hidden
+                  />
+                  <p className="text-xs font-semibold uppercase tracking-wider text-muted">
+                    {item.dates}
+                  </p>
+                  <p className="mt-1 text-sm font-semibold text-ink">
+                    {item.program}
+                  </p>
+                  <p className="mt-1 text-sm leading-snug text-muted">
+                    {item.school}
+                  </p>
+                </li>
+              ))}
+            </ol>
+
+            <h3 className="mt-12 text-sm font-semibold uppercase tracking-[0.16em] text-muted">
+              Languages
+            </h3>
+            <ul className="mt-4 space-y-2">
+              {profile.languages.map((language) => (
+                <li
+                  key={language.name}
+                  className="flex items-baseline justify-between gap-3 text-sm"
+                >
+                  <span className="font-semibold text-ink">{language.name}</span>
+                  <span className="text-muted">{language.level}</span>
+                </li>
+              ))}
+            </ul>
           </aside>
         </div>
       </div>

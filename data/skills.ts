@@ -27,12 +27,17 @@ export const skillGroups: SkillGroup[] = [
     ],
   },
   {
-    title: "Tools & Others",
+    title: "Data & Analytics",
     skills: [
-      { name: "Git" },
-      { name: "Docker" },
-      { name: "Nginx" },
+      { name: "Python" },
+      { name: "PostgreSQL" },
       { name: "Power BI" },
+      { name: "Looker Studio" },
+      { name: "Excel" },
     ],
+  },
+  {
+    title: "Tools & Others",
+    skills: [{ name: "Git" }, { name: "Docker" }, { name: "Nginx" }],
   },
 ];

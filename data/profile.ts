@@ -5,10 +5,10 @@ export const profile = {
   heroSubtitle: "Full-Stack Developer building practical digital solutions.",
   heroImage: "/assets/hero-developer-workspace-4k.png",
   tagline:
-    "A developer with a hospitality and operations background, building business-focused software that actually gets used.",
+    "A developer with an operational mindset. I build practical software that solves real business problems, combining experience in operations, data, and full-stack development.",
   bio: [
-    "I spent years in hospitality and operations before moving into software — so I build with the people who run the workday in mind, not just the people who write the tickets.",
-    "I focus on full-stack products that solve concrete business problems: event platforms, company portals, and tools that replace messy spreadsheets with something teams can trust.",
+    "I build practical software that solves real business problems, combining experience in operations, data, and full-stack development.",
+    "That usually means internal tools teams actually use: event platforms, company portals, and reporting that replaces messy spreadsheets with something they can trust.",
   ],
   email: "daniel.sindunata@gmail.com",
   location: "Semarang, Indonesia",
@@ -20,7 +20,7 @@ export const profile = {
   contactImage: "/contact/bg.svg",
   social: {
     github: "https://github.com/danielsindunata",
-    linkedin: "https://linkedin.com/in/yourusername",
+    linkedin: "https://www.linkedin.com/in/daniel-sindunata1/",
   },
   stats: [
     { label: "Full-Stack", detail: "End-to-end applications" },
@@ -28,26 +28,43 @@ export const profile = {
     { label: "Operations", detail: "Process-first design" },
     { label: "3 Projects", detail: "Production-minded builds" },
   ],
-  timeline: [
+  experience: [
     {
-      year: "2018",
-      title: "Chef / Hospitality",
-      description: "Operational discipline in high-pressure kitchens.",
+      dates: "Jul 2026 – Present",
+      role: "Full-Stack Developer",
+      company: "Right Side People Pte Ltd",
+      description:
+        "Internal apps for master data, finance, reporting, and collaborative tools.",
     },
     {
-      year: "2022",
-      title: "Data Analyst Bootcamp",
-      description: "SQL, reporting, and data-driven decisions.",
+      dates: "Mar 2026 – Jul 2026",
+      role: "Business Operational Developer",
+      company: "Saladayo (F&B)",
+      description:
+        "Operational dashboards and tools for store ops, production, and procurement.",
     },
     {
-      year: "2023",
-      title: "Freelance Developer",
-      description: "Portals and tools for real business workflows.",
+      dates: "2024 – 2026",
+      role: "Internal System Developer",
+      company: "Dallas Meat Semarang",
+      description:
+        "Inventory, Accurate setup, and automation for the family meat business.",
+    },
+  ],
+  education: [
+    {
+      dates: "Jan 2026 – Aug 2026",
+      program: "Data Analyst Bootcamp",
+      school: "Dibimbing.id",
     },
     {
-      year: "Now",
-      title: "Full-Stack Developer",
-      description: "Practical digital products, end to end.",
+      dates: "2015 – 2017",
+      program: "Advanced Diploma of Hospitality Management",
+      school: "William Angliss Institute, Melbourne",
     },
+  ],
+  languages: [
+    { name: "Indonesian", level: "Native" },
+    { name: "English", level: "Professional" },
   ],
 } as const;
