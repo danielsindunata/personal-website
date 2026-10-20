@@ -33,7 +33,6 @@ export const skillGroups: SkillGroup[] = [
       { name: "PostgreSQL" },
       { name: "Power BI" },
       { name: "Looker Studio" },
-      { name: "Excel" },
     ],
   },
   {

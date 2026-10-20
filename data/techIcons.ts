@@ -22,8 +22,6 @@ const techIconByName: Record<string, TechIcon> = {
   postgresql: { src: "/icons/postgresql.svg" },
   "looker studio": { src: "/icons/looker.svg" },
   looker: { src: "/icons/looker.svg" },
-  excel: { src: "/icons/microsoftexcel.svg" },
-  "microsoft excel": { src: "/icons/microsoftexcel.svg" },
   canvas: { fallback: "canvas" },
   websockets: { fallback: "websocket" },
 };
